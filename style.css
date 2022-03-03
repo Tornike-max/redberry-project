@@ -1,0 +1,83 @@
+.bg-img{
+    background-image: url(../images/galaxy2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height: 601px;
+    position: relative;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.mother-rocketeer{
+    max-width:640px;
+    width:100%;
+    height:500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rocketeer{
+    color: #FE3B1F;
+    font-size:60px;
+    font-family: 'Rowdies', cursive;
+    cursor: pointer;
+}
+
+.questions-border{
+    border-radius: 50px;
+    max-width: 280px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    top: 10%;
+    background-color: #FE3B1F;
+    position: relative;
+}
+
+.questions{
+    font-size:24px;
+    color: #FFFFFF;
+}
+
+.questions:hover{
+    transition: 0.5s;
+    font-size:24.5px;
+}
+
+.submitted-div{
+    max-width: 240px;
+    width: 100%;
+    height: 40px;
+    top: 10%;
+    position: relative;
+    margin-top:18px;
+}
+
+.submitted{
+    font-size:24px;
+    color:#FFFFFF;
+    text-align: center;
+    padding-top:8px;
+}
+.submitted:hover{
+    transition: 0.5s;
+    font-size:24.5px;
+}
+
+.astronaut{
+    max-width: 150px;
+    width: 100%;
+    height: 190px;
+    top: 12%;
+    position: relative;
+}
+
