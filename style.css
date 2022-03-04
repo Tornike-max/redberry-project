@@ -81,3 +81,184 @@
     position: relative;
 }
 
+/* questions page. left side */
+
+.leftside, .rightside{
+    height:50vh;
+    width:100%;
+}
+
+.leftside{
+    background:#FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightside{
+    background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rocketeer-head{
+    font-size:35px;
+    color: #FE3B1F;
+    font-family: 'Rowdies', cursive;
+}
+.rocketeer-head2{
+    font-size:35px;
+    color: #FE3B1F;
+    margin-bottom:40px;
+    font-family: 'Rowdies', cursive;
+}
+
+form label{
+    display: flex;
+    margin-top:20px;
+}
+
+form input{
+    border:1px solid #525557;
+    border-radius:3px;
+    font-size:20px;
+    outline:none;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.text{
+    font-size:15px;
+}
+
+
+.arrow-left{
+    color:#FE3B1F;
+    position: absolute;
+    padding-top:20px;
+    padding-left:0px;
+    
+}
+
+.circle-icon{
+    position: absolute;
+    color:#FE3B1F;
+    padding-top:20px;
+    
+}
+
+.circle-icon2{
+    position: absolute;
+    color:#FE3B1F;
+    opacity: 0.1;
+    padding-top:20px;
+    
+}
+
+.circle-icon3{
+    position: absolute;
+    color:#FE3B1F;
+    opacity: 0.1;
+    padding-top:20px;
+    
+}
+
+.circle-icon4{
+    position: absolute;
+    color:#FE3B1F;
+    opacity: 0.1;
+    padding-top:20px;
+    
+}
+
+.circle-icon5{
+    position: absolute;
+    color:#FE3B1F;
+    opacity: 0.1;
+    padding-top:20px;
+    
+}
+
+
+.arrow-right{
+    color:#FE3B1F;
+    position: absolute;
+    padding-top:20px;
+    cursor: pointer;
+}
+
+
+.div-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width:150px;
+    position: relative;
+    width:100%;
+    height:50px;
+    background-color:white;
+}
+
+/* questions page. right side */
+
+.origins{
+    font-size:35px;
+    color: #FE3B1F;
+    font-family: 'Rowdies', cursive;
+}
+
+.origins-div{
+    max-width: 304px;
+    width: 100%;
+    height: 215px;
+    margin-top: 90px;
+}
+
+
+.redberry-text{
+    font-size:20px;
+    color:#FFFFFF;
+    line-height: 120%;
+    letter-spacing: 0.5px;
+    
+}
+
+
+
+@media only screen and (min-width: 768px){
+    .leftside, .rightside{
+        height:100vh;
+    }
+
+}
+
+
+
+
+
+/* .first-section{
+    max-width:1920px;
+    width:100%;
+    height:601px;
+    display: flex;
+    
+}
+
+.coordinates{
+    font-size:64px;
+}
+
+.first-section-information{
+    background-color:radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.origins{
+    font-size:64px;
+} */
