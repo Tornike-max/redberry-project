@@ -25,20 +25,39 @@
             <div class="leftside">
                 <h2 class="rocketeer-head">Tell us about your skills</h2>
 
-                <form>
-                    <label></label>
-                    <input type ="text" placeholder="   First Name">
+                <div class="wrapper">
+                    <h4 class="title icon" style="--src:url(./icons/js.png)">Skills</h4>
+                    <ul class="dropdown">
+                        <li class="leng-icon" style="--src:url(./icons/js.png)" >JAVASCRIPT</li>
+                        <li class="leng-icon" style="--src:url(./icons/html.png)">HTML</li>
+                        <li class="leng-icon" style="--src:url(./icons/css.png)">CSS</li>
+                        <li class="leng-icon" style="--src:url(./icons/python.jpg)">PYTHON</li>
+                        <li class="leng-icon" style="--src:url(./icons/c++.png)">C++</li>
+                        
+                    </ul>
 
-                    <label></label>
-                    <input type ="text" placeholder="   Last Name">
+                </div>
 
-                    <label></label>
-                    <input type ="text" placeholder="   E Mail">
 
-                    <label></label>
-                    <input type ="text" placeholder="   + 995 5_ _ _ _">
-                    
-                </form>
+                <!-- <div class="dropdown">
+
+                    <div class="dropdown-select">
+                        <span class="select">Skills</span>
+                        <i class="fa fa-caret-down icon-drop"></i>
+
+                    </div>
+                    <div class="dropdown-list">
+                        <div class="dropdown-list_item">HTML</div>
+                        <div class="dropdown-list_item">CSS</div>
+                        <div class="dropdown-list_item">JAVASCRIPT</div>
+                        <div class="dropdown-list_item">PHP</div>
+                        <div class="dropdown-list_item">C++</div>
+                        <div class="dropdown-list_item">PYTHON</div>
+                        <div class="dropdown-list_item">JAVA</div>
+
+                    </div>
+
+                </div> -->
 
                 <div class="div-icon">
                     <a href="index.html"><i class="fa-solid fa-circle-arrow-left arrow-left"></i></a>
@@ -81,6 +100,16 @@
 
 
     </div>
+
+    <script type="text/javascript">
+        let wrapper = document.querySelector(".wrapper");
+        wrapper.addEventListener("click", (ev) => {
+            let el = ev.target.parentElement;
+            if (el == wrapper || el.parentElement == wrapper){
+                wrapper.classList.toggle("active")
+            }
+        })
+    </script>
     
 </body>
 </html>
