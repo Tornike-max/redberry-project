@@ -24,69 +24,82 @@
 
         <div class="col-md-6 no-gutters">
             <div class="leftside">
-                <h2 class="rocketeer-head">Tell us about your skills</h2>
+                <h2 class="rocketeer-head">What about you?</h2>
+              
+    <div class="about-div">      
+                <p>Would you attend Devtalks and maybe also organize your own?</p>
 
-                <div class="wrapper">
-                    <h4 class="title leng-icon" style="--src:url(./icons/down.png)">Skills</h4>
-                    <ul id="skills" class="dropdown">
-                    </ul>
+        <div>
+            <input type="checkbox" id="scales" name="scales"
+            checked>
+            <label for="scales">Yes</label>
+        </div>
 
-                </div>
+        <div>
+            <input type="checkbox" id="horns" name="horns">
+            <label for="horns">No</label>
+        </div>
+
+    
+            <p>What would you speak about at Devtalk?</p>
+
+            <div>
+                <input class="about-text" type="text" id="scales" name="scales" placeholder="    I would">
+            </div>
+    
+
+              <p>Tell us something special</p>
+
+              <div>
+                <input class="about-text" type="text" id="scales" name="scales" placeholder="    I...">
+            </div>
+
+
+        </div>
+    
+        
                 
-                <form>
-                    <label></label>
-                    <input type="text" placeholder="Experience Duration in Years" id="fname" name="fname">
-                </form>
-
-                <div class="orange-div">
-                    <button class="orange-button" type="button">Add Programming Language</button>
-                </div>
-
-                <form>
-                    <label></label>
-                    <input type="text" placeholder="  PHP         Years of Experience:3" id="fname" name="fname" >
-                    <i class="fa-solid fa-circle-minus minus"></i>
-                </form>
-
-                <form>
-                    <label></label>
-                    <input type="text" placeholder="  REACT      Years of Experience:2" id="fname" name="fname">
-                    <i class="fa-solid fa-circle-minus minus"></i>
-                </form>
 
 
 
                 <div class="div-icon">
-                    <a href="questions.html"><i class="fa-solid fa-circle-arrow-left arrow-left"></i></a>
+                    <a href="skills.html"><i class="fa-solid fa-circle-arrow-left arrow-left"></i></a>
                     <a href="questions.html"><i class="fa-solid fa-circle circle-icon"></i></a>
                     <a href="skills.html"><i class="fa-solid fa-circle circle-icon2"></i></a>
                     <a href="covid.html"><i class="fa-solid fa-circle circle-icon3"></i></a>
-                    <a href="#"><i class="fa-solid fa-circle circle-icon4"></i></a>
-                    <a href="#"><i class="fa-solid fa-circle circle-icon5"></i></a>
-                    <a href="covid.html"><i class="fa-solid fa-circle-arrow-right arrow-right"></i></a>
+                    <a href="about.html"><i class="fa-solid fa-circle circle-icon4"></i></a>
+                    <a href="submit.html"><i class="fa-solid fa-circle circle-icon5"></i></a>
+                    <a href="submit.html"><i class="fa-solid fa-circle-arrow-right arrow-right"></i></a>
                 </div>
 
             </div>
-
 
         </div>
         <div class="col-md-6 no-gutters">
 
             <div class="rightside">
                  
-                <h2 class="our-battles">A bit about our battles</h2>
+                <h2 class="insight">Redberrian Insights</h2>
 
-                <div class="battles-div">
-                    <p class="battles-text">
-                        As we said, Redberry 
-                        has been on the field for quite some time now,
-                         and we have touched and embraced a variety of
-                          programming languages, technologies, philosophies,
-                           and frameworks. We are battle-tested in PHP Laravel
-                            Stack with Vue.js, refined in React, and allies 
-                            with Serverside technologies like Docker and 
-                            Kubernetes, and now we have 
-                            set foot in the web3 industry.</p>
+                <div class="insight-div">
+                    <p class="insight-text">
+                        We were soo much fun before 
+                        the pandemic started! Parties
+                         almost every weekend and lavish 
+                         employee birthday celebrations!
+                          Unfortunately, covid ruined that
+                           fun like it did almost everything
+                            else in the world. But we try 
+                            our best to zhuzh it up a bit.
+                             For example, we host biweekly 
+                             Devtalks where our senior and 
+                             lead developers talk about topics
+                              they are passionate about.
+                               Previous topics have included 
+                               Web3, NFT, Laravel 9, Kubernetes, etc.
+                                We hold these talks in the office
+                                 but you can join our Zoom broadcast as well.
+                                  Feel free to join either as an attendee or a speaker!</p>
                     </div>
 
 
@@ -122,7 +135,7 @@
                     switch(skill.title) {
                         case "HTML":
                             li.setAttribute("style", "--src:url(./icons/html.png)")
-
+                            
                         case "CSS":
                             li.setAttribute("style", "--src:url(./icons/css.png)")
                     }

@@ -124,10 +124,11 @@ form label{
 form input{
     border:1px solid #525557;
     border-radius:3px;
-    font-size:20px;
+    font-size:25px;
+    height: 30px;
     outline:none;
     font-family: 'Montserrat', sans-serif;
-    
+    position: relative;
 }
 
 .text{
@@ -198,8 +199,8 @@ form input{
     max-width:150px;
     position: relative;
     width:100%;
-    height:50px;
-    background-color:white;
+    height: 0px;
+    margin-top: 20px;
 }
 
 /* questions page. right side */
@@ -239,7 +240,7 @@ form input{
 
 
 .wrapper{
-    width:400px;
+    width:300px;
     height:60px;
     margin-top:100px;
     user-select:none;
@@ -254,7 +255,7 @@ form input{
     border:1px solid grey;
     background-color:#fff;
     color:#333;
-    font-size:20px;
+    font-size:18px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -333,49 +334,215 @@ form input{
     opacity: 1;
 }
 
-/* .dropdown{
-    width:30rem;
+input,
+input::-webkit-input-placeholder{
+    font-size:15px;
+    line-height: 3;
+    color:#000000;
+}
+
+.input{
+    max-width:200px;
+}
+
+.orange-div{
+    width:290px;
+    height:40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orange-button {
+    height: 25px;
+    background-color: #FE3B1F;
+    margin-top: 10px;
+    width: 165px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.minus{
+    color:#FE3B1F;
+    position: absolute;
+    cursor: pointer;
+    margin-top:8px;
+}
+
+.our-battles{
+    font-size:35px;
+    color: #FE3B1F;
+    font-family: 'Rowdies', cursive;
+}
+
+.battles-div{
+    max-width: 405px;
+    width: 100%;
+    height: 215px;
+    margin-top: 90px;
+}
+
+.battles-text{
+    font-size:20px;
+    color:#FFFFFF;
+    line-height: 120%;
+    letter-spacing: 0.5px;
+    
+}
+
+/* covid page */
+
+.checkbox-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    line-height: 30px;
+    max-width: 300px;
+    /* background-color: red; */
+    height: 400px;
+}
+.date1{
+    max-width:100px;
+    margin:0 auto;
+}
+
+.date-time{
+    max-width: 240px;
+    height: 28px;
+}
+
+.our-covid{
+    font-size:35px;
+    color: #FE3B1F;
+    font-family: 'Rowdies', cursive;
+}
+
+.covid-div{
+    max-width: 405px;
+    width: 100%;
+    height: 215px;
+    margin-top: 90px;
+    margin-bottom: 145px;
+}
+
+.covid-text{
+    font-size:20px;
+    color:#FFFFFF;
+    line-height: 120%;
+    letter-spacing: 0.5px;
+    
+}
+
+/* about  page*/
+
+.about-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    line-height: 30px;
+    max-width: 390px;
+    height: 350px;
+    font-family: 'Rowdies', cursive;
+}
+
+.about-text{
+    width: 300px;
+    height: 60px;
+    line-height: 21.94px;
+    color:#3A3A3A;
+}
+
+.insight{
+    font-size:35px;
+    color: #FE3B1F;
+    font-family: 'Rowdies', cursive;
+}
+
+.insight-div{
+    max-width: 405px;
+    width: 100%;
+    height: 215px;
+    margin-top: 90px;
+    margin-bottom: 100px;
+}
+
+.insight-text{
+    font-size:20px;
+    color:#FFFFFF;
+    line-height: 120%;
+    letter-spacing: 0.5px;
+    
+}
+
+/* submit page */
+
+
+.submit-maindiv{
+    background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 569px;
+}
+
+.submit-div{
+    max-width:500px;
+    width:100%;
+    height:200px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.dropdown:hover .dropdown-list{
-    opacity: 1;
-    visibility: visible;
-    
-}
-
-.dropdown-select{
-    margin-top:20px;
-    padding:10px;
-    border-radius:4px;
-    background-color:white;
-    max-width:200px;
+.button-submit{
+    background-color:#FE3B1F;
+    max-width:240px;
     width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size:1rem;
-    cursor:pointer;
-    border:1px solid grey;
-}
-
-.dropdown-list{
-    border-radius:4px;
-    background-color:white;
-    position: absolute;
-    top:110%;
-    left:0;
-    right:0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s linear, visibility 0.2s linear;
+    height:70px;
+    border:none;
+    border-radius: 50px;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    color:#FFFFFF;
     cursor: pointer;
 }
 
-.dropdown-list_item{
-    padding:5px;
-    font-size:0.7rem;
-} */
+.button-submit:hover{
+    font-size:37px;
+    transition: 0.2s;
+}
+
+.goback{
+    color:#FFFFFF;
+    margin-top:15px;
+    cursor: pointer;
+    font-size:15px;
+}
+
+.goback:hover{
+    font-size:16px;
+    transition: 0.2s;
+}
+
+/* thank */
+
+.thank-maindiv{
+    background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 569px;
+}
+
+.thank{
+    font-size: 36px;
+    font-family: 'Rowdies', cursive;
+    color: #FE3B1F;
+}
