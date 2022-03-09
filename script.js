@@ -28,22 +28,20 @@ const getApplications = async (token) => {
   return applications;
 };
 
-const createApplication = async (jsonData) => {
+const createApplication = (jsonData, href) => {
   let url = `${baseUrl}/application`;
 
-  let data = fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jsonData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      return data;
-    });
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url);
 
-  let application = await data;
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
 
-  return application;
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      window.location.href = href;
+    }
+  };
+
+  xhr.send(JSON.stringify(jsonData));
 };
-
-

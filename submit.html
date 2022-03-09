@@ -1,32 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/5536c85188.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rowdies&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://kit.fontawesome.com/5536c85188.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rowdies&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="./script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="submit-maindiv">
-    <div class="submit-div">
-        
-            <a href="thank.html"><button class="button-submit" type="button">Submit</button></a>
-      
+      <div class="submit-div">
+        <a>
+          <button
+            class="button-submit"
+            onclick="submitApplication()"
+            type="button"
+          >
+            Submit
+          </button>
+        </a>
+
         <a class="goback" href="about.html">go back</a>
+      </div>
     </div>
-</div>
-    
-    
-</body>
+
+    <script>
+      workPreference = (preference) => {
+        switch (preference) {
+          case "home":
+            return "from_home";
+            break;
+
+          case "sairme":
+            return "from_office";
+            break;
+
+          case "hybrid":
+            return "hybrid"
+            break;
+        }
+      };
+
+      submitApplication = () => {
+        let personalInformation = JSON.parse(localStorage.getItem("personalInformation"));
+        let skills = JSON.parse(localStorage.getItem("skills"));
+        let covidStats = JSON.parse(localStorage.getItem("covidStats"));
+        let aboutInfo = JSON.parse(localStorage.getItem("aboutInfo"));
+
+        createApplication({
+          token: "561d5662-c9c8-4f93-aa76-e3c0812bdc85",
+          first_name: personalInformation.firstName,
+          last_name: personalInformation.lastName,
+          email: personalInformation.email,
+          phone: personalInformation.telephoneNumber,
+          skills: skills,
+          work_preference: workPreference(covidStats.workLocation),
+          had_covid: covidStats.hadCovid,
+          had_covid_at: covidStats.covidDate,
+          vaccinated: covidStats.hasBeenVaccinated,
+          vaccinated_at: covidStats.vaccinationDate,
+          will_organize_devtalk: aboutInfo.willAttend,
+          devtalk_topic: aboutInfo.subject,
+          something_special: aboutInfo.somethingSpecial,
+        }, "/thanks.html")
+      };
+    </script>
+  </body>
 </html>

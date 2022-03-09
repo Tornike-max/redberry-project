@@ -27,41 +27,28 @@
                 <h2 class="rocketeer-head">Tell us about your skills</h2>
 
                 <div class="wrapper">
-                    <h4 class="title leng-icon" style="--src:url(./icons/down.png)">Skills</h4>
-                    <ul id="skills" class="dropdown">
-                    </ul>
-
+                    <select class="css-main" id="skills">
+                    </select>
                 </div>
                 
                 <form>
                     <label></label>
-                    <input type="text" placeholder="Experience Duration in Years" id="fname" name="fname">
+                    <input type="text" placeholder="Experience Duration in Years" id="experience">
                 </form>
 
                 <div class="orange-div">
-                    <button class="orange-button" type="button">Add Programming Language</button>
+                    <button class="orange-button" type="button" onclick="addSelectedSkill()">Add Programming Language</button>
                 </div>
 
-                <form>
-                    <label></label>
-                    <input type="text" placeholder="  PHP         Years of Experience:3" id="fname" name="fname" >
-                    <i class="fa-solid fa-circle-minus minus"></i>
-                </form>
-
-                <form>
-                    <label></label>
-                    <input type="text" placeholder="  REACT      Years of Experience:2" id="fname" name="fname">
-                    <i class="fa-solid fa-circle-minus minus"></i>
-                </form>
-
-
+                <div id="selected-skills">
+                </div>
 
                 <div class="div-icon">
                     <a href="questions.html"><i class="fa-solid fa-circle-arrow-left arrow-left"></i></a>
                     <a href="questions.html"><i class="fa-solid fa-circle circle-icon"></i></a>
                     <a href="skills.html"><i class="fa-solid fa-circle circle-icon2"></i></a>
                     <a href="covid.html"><i class="fa-solid fa-circle circle-icon3"></i></a>
-                    <a href="#"><i class="fa-solid fa-circle circle-icon4"></i></a>
+                    <a href="about.html"><i class="fa-solid fa-circle circle-icon4"></i></a>
                     <a href="#"><i class="fa-solid fa-circle circle-icon5"></i></a>
                     <a href="covid.html"><i class="fa-solid fa-circle-arrow-right arrow-right"></i></a>
                 </div>
@@ -109,27 +96,82 @@
             }
         })
 
+        addSelectedSkill = () => {
+            let selectedSkillsElement = document.getElementById("selected-skills")
+            let skills = document.getElementById("skills")
+            let experience = document.getElementById("experience")
+            
+            let skill = skills.options[skills.selectedIndex]
+
+            createSkillElement(selectedSkillsElement, skill.id, skill.value, experience.value)
+            saveSkill({id: parseInt(skill.id), title: skill.value, experience: parseInt(experience.value)})
+        }
+
         getSkills()
             .then((skills) => {
                 let dropdown = document.getElementById("skills");
 
                 skills.forEach(skill => {
-                    var li = document.createElement("li");
-                    li.appendChild(document.createTextNode(skill.title));
-                    li.setAttribute("id", skill.id);
-                    li.setAttribute("class", "leng-icon");
+                    var option = document.createElement("option");
+                    option.appendChild(document.createTextNode(skill.title));
+                    option.setAttribute("id", skill.id);
 
-                    switch(skill.title) {
-                        case "HTML":
-                            li.setAttribute("style", "--src:url(./icons/html.png)")
+                    dropdown.appendChild(option);
 
-                        case "CSS":
-                            li.setAttribute("style", "--src:url(./icons/css.png)")
-                    }
-
-                    dropdown.appendChild(li);
+                    
                 });
             })
+
+        saveSkill = (skill) => {
+            if(localStorage.getItem("skills")){
+                let skills = JSON.parse(localStorage.getItem("skills"))
+                skills.push(skill)
+                localStorage.setItem("skills", JSON.stringify(skills))
+            } else {
+                localStorage.setItem("skills", JSON.stringify([skill]))
+            }
+        }
+
+        deleteSkill = (id) => {
+            if(localStorage.getItem("skills")){
+                let skills = JSON.parse(localStorage.getItem("skills"))
+                let skill = document.getElementById(`selected-${id}`)
+
+                skill.parentNode.removeChild(skill)
+                skills = skills.filter(skill => skill.id !== id)
+
+                localStorage.setItem("skills", JSON.stringify(skills))
+            }
+        }
+
+        createSkillElement = (selectedSkillsElement, id, skill, experience) => {
+            let selectedSkill = document.createElement("form")
+            let skillText = document.createElement("input")
+            let deleteButton = document.createElement("i")
+
+            selectedSkill.setAttribute("id", `selected-${id}`)
+
+            skillText.setAttribute("type", "text")
+            skillText.setAttribute("placeholder", `${skill} - years of experience ${experience}`)
+            skillText.setAttribute("id", "fname")
+
+            deleteButton.setAttribute("class", "fa-solid fa-circle-minus minus")
+            deleteButton.setAttribute("onClick", `deleteSkill(${id})`)
+
+            selectedSkill.appendChild(skillText)
+            selectedSkill.appendChild(deleteButton)
+
+            selectedSkillsElement.appendChild(selectedSkill)
+        }
+
+        if(localStorage.getItem("skills")) {
+            let selectedSkillsElement = document.getElementById("selected-skills")
+            let skills = JSON.parse(localStorage.getItem("skills"))
+
+            skills.forEach(skill => {
+                createSkillElement(selectedSkillsElement, skill.id, skill.title, skill.experience)
+            })
+        }
     </script>
     
 </body>
